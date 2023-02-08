@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Using_Check_application_state" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1002,2313" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Using_Check_application_state" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1002,2514" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
       <x:String>System.Activities</x:String>
@@ -84,7 +84,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Using_Check_application_state" sap:VirtualizedContainerService.HintSize="1012,2248" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Using Check application state for withdrwal transaction, and to get the transaction No&#xD;&#xA;&#xD;&#xA;1.  Use Application: to select the double UI interface&#xD;&#xA;2. Use Check app state to check if the bot is in correct interface, which is the withdrawal interface&#xD;&#xA;3. If the app is in withdrawal interface, hence enter numbers&#xD;&#xA;5. Else, navigate the bot to withdrawal interface&#xD;&#xA;6. Enter the numbers, accept and get transaction ID in the Double UI withdrawal interface." DisplayName="Using_Check_application_state" sap:VirtualizedContainerService.HintSize="1012,2449" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -92,13 +92,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: DoubleUI" sap:VirtualizedContainerService.HintSize="950,2106" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="092bff26-3646-4165-8b24-3189a40af5be" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: DoubleUI" sap:VirtualizedContainerService.HintSize="950,2214" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="092bff26-3646-4165-8b24-3189a40af5be" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916,1813" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916,1921" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="TransactionId" />
             </Sequence.Variables>
@@ -107,7 +107,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'Withdrawal transaction'" sap:VirtualizedContainerService.HintSize="854,1698" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="092bff26-3646-4165-8b24-3189a40af5be" Version="V3">
+            <uix:NCheckState sap2010:Annotation.AnnotationText="Check if &quot;Withdrawal Transaction&quot; appears on our UI" DisplayName="Check App State 'Withdrawal transaction'" sap:VirtualizedContainerService.HintSize="854,1806" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="092bff26-3646-4165-8b24-3189a40af5be" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,1115" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -259,6 +259,11 @@
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
           </Sequence>
         </ActivityAction>
@@ -266,6 +271,12 @@
       <uix:NApplicationCard.TargetApp>
         <uix:TargetApp Area="104, 104, 626, 629" FilePath="C:\\Users\\Victor\\Downloads\\doubleui.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI0SURBVFhH7ZfbThNRFIZ70zPFUl4BLo2vJWhVegQUgyJ4luJFE69M+hyU46ggCljrocoh4TF6s1xr7dl7Nsze6b7QlMTu5MtMppn1rf+fq0YGZ3Cq5cLydKUI/YDcEdMPfxvP84xXghfodrt94fIt0Gg0oF6vM3Qvn197ewajr0+RE8itILVj5Ahyy8RvGHmFvPwFIy+IDmSfd+Dqm6Oec50byK2QMJCyUEk7Spp99gOyTwNMs3TcFzCm/IlCwhc++Q5XiMffmOGltnGWTmgBW1UyqUhpkS6hdPGr4BHR6jnXuYGgWimU0rYmRBZayBfIPEQeHBpn6TgvEKRsCxZRrIQtFg6zFJk/gKH7xL5xlk5oAVtVF6vNaCkZJUXm9mHo3mem11znBvSkISkJ51CIpO9+8tmD9OyecZaO8wJKiGSUVCZFIcokqZmPkJpGqrvGWTqhBWxV6UnTJKSUUsrCXQFKU5UdSJY/MPJ9G84NUFJZa3pGpvSFLBXCZPk9JEtI8R1jmqXjvAClPJeUUkopCX0SBQ8SU8Q2Y5qlE1rA9glSVSFUSaUUUyYKhC+9sw3x21uCW5vqfRvODUhpwq9WCVkqhUIaz29A7Caxbpyl474AiX1pnFIq6SbEUBjP4xWFzI01iE0iE03jLJ3QArZPwNVekLKYhVLahChKoxOrEL0ukO/bcG5gfH5HpMyfTxllaSDUGZv1jLN0nBf4V1yOBSqlqRrd9INKqVjz/x0Mzn97IpE/DGNOZZe1ZgIAAAAASUVORK5CYII=" InformativeScreenshot="48fadffaeead3701d8cc8e27963758e0.png" Selector="&lt;wnd app='doubleui.exe' cls='HwndWrapper*' title='DoubleUI' /&gt;" />
       </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
   </Sequence>
 </Activity>
